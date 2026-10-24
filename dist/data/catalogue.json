@@ -1,0 +1,58 @@
+[
+  {
+    "id": "ahom-buranji",
+    "title": "Ahom-Buranji",
+    "subtitle": "From the earliest time to the end of Ahom rule",
+    "type": "Chronicle · printed edition",
+    "date": "1930",
+    "status": "Available in reader",
+    "mode": "local",
+    "description": "The complete supplied scan in original page order. Selected passages open in an Ahom-only view, with source locations and room for independent readings.",
+    "extent": "394 scan pages · 12 source anchors",
+    "source": "buranji",
+    "action": "Open reader",
+    "href": "#reader?page=7"
+  },
+  {
+    "id": "bar-amra",
+    "title": "Bar Amra",
+    "subtitle": "Tai-Ahom headwords, Assamese explanations",
+    "type": "Lexicon · working edition",
+    "date": "2026 working edition",
+    "status": "Linked working edition",
+    "mode": "linked",
+    "description": "A provisional Unicode edition with 1,230 recovered records across 61 manuscript images. Folios 1r, 10r, 26r and 26v remain untranscribed; other sequence gaps remain.",
+    "extent": "12 sample entries available here",
+    "source": "bar-amra-working",
+    "action": "Explore samples",
+    "href": "#lexicon"
+  },
+  {
+    "id": "nemi-mang",
+    "title": "Nemi Mang",
+    "subtitle": "A manuscript lead for the Nimi comparison",
+    "type": "Narrative · catalogue reference",
+    "date": "EAP373/20/5",
+    "status": "Reference record",
+    "mode": "reference",
+    "description": "A key comparison witness in the existing research dossier. The catalogue reference is recorded here; its manuscript images and a certified translation have not been imported into this release.",
+    "extent": "Manuscript-level collation pending",
+    "source": "eap-nemi",
+    "action": "View research dossier",
+    "href": "#research"
+  },
+  {
+    "id": "mao-shans",
+    "title": "The Political Expansion of the Mao Shans",
+    "subtitle": "Padmeswar Gogoi",
+    "type": "Historical study · journal article",
+    "date": "1956",
+    "status": "Linked source",
+    "mode": "linked",
+    "description": "The Journal of the Siam Society source for following Gogoi’s historical argument and the books and journals he cites. The publisher’s volume page provides the article.",
+    "extent": "JSS 44(2), pp. 125–137",
+    "source": "gogoi",
+    "action": "Open publisher",
+    "href": "https://thesiamsociety.org/jss_publications/volume-44-2-1956/"
+  }
+]

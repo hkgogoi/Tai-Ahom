@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#193c34">
+  <meta name="description" content="Read Tai-Ahom sources, compare manuscript readings, and trace historical arguments to their evidence.">
+  <title>Ahom Research Atlas</title>
+  <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="data.js"></script>
+  <script defer src="core.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Ahom Research Atlas home"><img src="assets/mark.svg" width="40" height="40" alt=""><span>AHOM<span class="brand-sub">RESEARCH ATLAS</span></span></a>
+    <nav aria-label="Main navigation">
+      <a href="#home" data-nav="home">Overview</a>
+      <a href="#library" data-nav="library">Collection</a>
+      <a href="#reader" data-nav="reader">Reader</a>
+      <a href="#lexicon" data-nav="lexicon">Lexicon</a>
+      <a href="#research" data-nav="research">Research</a>
+    </nav>
+    <a class="notebook-link" href="#notebook" data-nav="notebook"><span aria-hidden="true">▤</span> <span>My notebook</span><span class="note-count" id="note-count">0</span></a>
+  </header>
+  <main id="main" tabindex="-1"></main>
+  <footer class="site-footer"><span>Ahom Research Atlas <span class="footer-dot">·</span> Reading edition 0.1</span><a href="#about">Sources &amp; editorial method</a><span>Every reading has a source.</span></footer>
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+  <dialog id="note-dialog" aria-labelledby="note-heading"><form id="note-form"><div class="dialog-top"><div><p class="eyebrow">YOUR RESEARCH</p><h2 id="note-heading">Reading note</h2></div><button type="button" class="icon-button" id="close-note" aria-label="Close note">×</button></div><p id="note-context" class="muted"></p><label for="note-text">Observation, proposed reading, or question</label><textarea id="note-text" rows="8" maxlength="20000" placeholder="Write your observation and the evidence you want to check…"></textarea><p class="small muted">Saved in this browser on this device. Export your notebook to keep a backup or move it elsewhere.</p><div class="dialog-actions"><button class="button secondary" type="button" id="cancel-note">Cancel</button><button class="button" type="submit">Save note</button></div></form></dialog>
+  <dialog id="import-dialog" aria-labelledby="import-heading"><div class="dialog-top"><h2 id="import-heading">Import notebook</h2><button class="icon-button" id="close-import" aria-label="Close import">×</button></div><p id="import-summary"></p><p class="muted">New notes and bookmarks will be merged. When a note already exists, the newer edit is kept.</p><div class="dialog-actions"><button class="button secondary" id="cancel-import">Cancel</button><button class="button" id="confirm-import">Merge notebook</button></div></dialog>
+  <noscript><p class="notice">JavaScript is needed for the reader and notebook. The original source is also available at <a href="https://archive.org/details/in.ernet.dli.2015.450867">Internet Archive</a>.</p></noscript>
+</body>
+</html>

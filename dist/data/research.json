@@ -1,0 +1,165 @@
+{
+  "title": "Lengdon and the Nimi Jātaka",
+  "claims": [
+    {
+      "id": "c1",
+      "category": "observation",
+      "label": "Source observation",
+      "title": "Locate Bithila and Mungthila separately",
+      "text": "Printed page 4 contains the two relevant contexts: §10 for Mungthila and §13 for Bithila. The source locations are checked. A new full Ahom reading is still pending, and the two passages concern different named figures.",
+      "locator": "Ahom-Buranji, printed p. 4, §§10 and 13 · scan page 10",
+      "sources": [
+        "buranji"
+      ],
+      "anchor": "ab-p004-13",
+      "review": "Page location checked, 23 October 2026. Name interpretation also draws on the project dossier of 10 October."
+    },
+    {
+      "id": "c2",
+      "category": "observation",
+      "label": "Source observation",
+      "title": "The shared-throne passage is identifiable",
+      "text": "The passage to collate is printed page 7, §5. The historical English column describes Lengdon and Thenkham sharing a throne and consulting over government. The Ahom crop is provided so an independent reading can be checked against it.",
+      "locator": "Ahom-Buranji, printed p. 7, §5 · scan page 13",
+      "sources": [
+        "buranji"
+      ],
+      "anchor": "ab-p007-05",
+      "review": "The source crop is checked. The historical English description is not relabelled as a fresh translation."
+    },
+    {
+      "id": "c3",
+      "category": "comparison",
+      "label": "Comparative evidence",
+      "title": "Nimi supplies a relevant royal-heaven narrative",
+      "text": "Jātaka 541 places Nimi at Mithilā and sends Mātali to bring him to Sakka. The journey includes moral instruction through a tour of hells and heavens. This gives a concrete narrative to compare, while the distinct purposes of the stories must remain visible.",
+      "locator": "Nimi Jātaka 541; the invitation and journey sections",
+      "sources": [
+        "nimi"
+      ],
+      "review": "English primary-text translation consulted for this release. Comparison is not a claim of direct textual dependence."
+    },
+    {
+      "id": "c4",
+      "category": "comparison",
+      "label": "Comparative evidence",
+      "title": "The motif does not identify Nimi uniquely",
+      "text": "The project’s source audit also compares Sādhina Jātaka 494, another Mithilā king’s encounter with Sakka, including shared sovereignty. A shared seat or heavenly host needs to be tested against this wider narrative tradition.",
+      "locator": "Sādhina Jātaka 494; project audit, 10 October 2026, pp. 4–5",
+      "sources": [
+        "sadhina"
+      ],
+      "review": "Alternative comparison retained to avoid treating a widely shared motif as unique evidence."
+    },
+    {
+      "id": "c5",
+      "category": "comparison",
+      "label": "Manuscript lead",
+      "title": "An Ahom Nemi witness strengthens the research question",
+      "text": "The earlier audit identifies Nemi Mang in the EAP catalogue and records alternative copying dates within the Ahom monarchy. A catalogue identification supports a manuscript lead; it does not establish the date of the story’s first arrival or name a royal patron.",
+      "locator": "EAP373/20/5; Morey 2015; project audit, p. 7",
+      "sources": [
+        "eap-nemi",
+        "morey"
+      ],
+      "review": "Inherited catalogue finding. Live verification and a new colophon reading remain pending."
+    },
+    {
+      "id": "c6",
+      "category": "hypothesis",
+      "label": "Open hypothesis",
+      "title": "Buddhist adaptation is plausible; the exact route remains open",
+      "text": "The place-name correspondences, royal-heaven motif and Nemi witness make Buddhist adaptation a serious question. They do not yet demonstrate that the complete Lengdon foundation story derives exclusively from Nimi, or that every Ahom ruler practised Buddhism.",
+      "locator": "Synthesis from the project’s 10 October 2026 source audit",
+      "sources": [
+        "buranji",
+        "nimi",
+        "morey",
+        "gogoi"
+      ],
+      "review": "Research inference, not a certified translation or a settled historical conclusion."
+    }
+  ],
+  "sources": [
+    {
+      "id": "buranji",
+      "short": "Barua 1930",
+      "title": "Ahom-Buranji: From the Earliest Time to the End of Ahom Rule",
+      "author": "Golap Chandra Barua (editor and translator)",
+      "date": "1930",
+      "url": "https://archive.org/details/in.ernet.dli.2015.450867",
+      "type": "Printed primary-language edition",
+      "review": "Supplied 394-page scan. Title page and selected original-language source locations inspected on 23 October 2026. Printed English is a separate historical translation; it is not an independent new translation."
+    },
+    {
+      "id": "bar-amra-working",
+      "short": "Bar Amra working edition",
+      "title": "Bar Amra — Unicode Working Edition",
+      "author": "Project working edition; inherited scholarly transcriptions from the Ahom Dictionary Resource Project",
+      "date": "14 October 2026",
+      "url": "https://drive.google.com/file/d/1gWXc1O5AbUDvCskpD50j6p6ywxiRAede/view",
+      "type": "Provisional project edition",
+      "review": "14 October 2026 snapshot read on 23 October 2026. That snapshot contains 1,230 recovered records; incomplete. Later revisions are not incorporated here. Samples here retain source confidence. This link keeps its existing Drive access; access may be required."
+    },
+    {
+      "id": "dictionary-project",
+      "short": "Ahom Dictionary Resource Project",
+      "title": "Ahom Dictionary Resources",
+      "author": "Stephen Morey, project director",
+      "date": "Online project",
+      "url": "https://www.jseals.org/archives/ahom/",
+      "type": "Scholarly source project",
+      "review": "Project description consulted. Its manuscript copy and entry system must be distinguished from other Bar Amra witnesses."
+    },
+    {
+      "id": "nimi",
+      "short": "Jātaka 541",
+      "title": "The Birth Story about King Nimi",
+      "author": "W. H. D. Rouse; digital reading edition at Ancient Buddhist Texts",
+      "date": "Jātaka VI",
+      "url": "https://ancient-buddhist-texts.net/English-Texts/Jataka/541.htm",
+      "type": "English translation of a primary text",
+      "review": "English witness consulted on 23 October 2026. Not a fresh Pāli translation. The dossier distinguishes translation evidence from original-language verification."
+    },
+    {
+      "id": "sadhina",
+      "short": "Jātaka 494",
+      "title": "The Birth Story about King Sādhina",
+      "author": "Digital reading edition at Ancient Buddhist Texts",
+      "date": "Jātaka IV",
+      "url": "https://ancient-buddhist-texts.net/English-Texts/Jataka/494.htm",
+      "type": "Comparative primary-text translation",
+      "review": "Included as an alternative shared-sovereignty comparison, not proof of the Ahom narrative’s specific source."
+    },
+    {
+      "id": "morey",
+      "short": "Morey 2015",
+      "title": "Metadata and endangered archives: lessons from the Ahom Manuscripts Project",
+      "author": "Stephen Morey, in Maja Kominko (ed.), From Dust to Digital, pp. 31–66",
+      "date": "2015",
+      "url": "https://www.openbookpublishers.com/books/10.11647/obp.0052",
+      "type": "Scholarly manuscript study",
+      "review": "Publisher and chapter metadata rechecked. Detailed claims here are inherited from the project’s 10 October 2026 source audit, not a new complete collation of the chapter."
+    },
+    {
+      "id": "eap-nemi",
+      "short": "EAP373/20/5",
+      "title": "Nemi Mang manuscript catalogue",
+      "author": "British Library, Endangered Archives Programme",
+      "date": "Catalogue record",
+      "url": "https://eap.bl.uk/archive-file/EAP373-20-5",
+      "type": "Manuscript catalogue",
+      "review": "The project’s 10 October audit records alternative copying dates 1741–42 or 1801–02, with the Nemi section beginning at folio 47r. The live catalogue required JavaScript verification during this release; its colophon has not been newly deciphered."
+    },
+    {
+      "id": "gogoi",
+      "short": "Gogoi 1956",
+      "title": "The Political Expansion of the Mao Shans",
+      "author": "Padmeswar Gogoi, Journal of the Siam Society 44(2), pp. 125–137",
+      "date": "1956",
+      "url": "https://thesiamsociety.org/jss_publications/volume-44-2-1956/",
+      "type": "Historical study",
+      "review": "Publisher’s volume listing verified. The cited books and manuscript witnesses remain separate evidence records."
+    }
+  ]
+}

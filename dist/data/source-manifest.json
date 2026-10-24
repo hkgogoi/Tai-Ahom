@@ -1,0 +1,224 @@
+{
+  "title": "Ahom-Buranji",
+  "editor": "Golap Chandra Barua",
+  "year": 1930,
+  "sourceType": "Original-language printed edition with parallel English",
+  "pages": 394,
+  "sha256": "92bbd81bcc7e75b5f585ed4570b2d285ce1bb250ccae26108251d67dab835709",
+  "pageImageWidth": 850,
+  "pageImageFormat": "webp",
+  "sourceUrl": "https://archive.org/details/in.ernet.dli.2015.450867",
+  "verifiedPrintedLabels": {
+    "7": "1",
+    "10": "4",
+    "13": "7",
+    "16": "10",
+    "26": "20"
+  },
+  "anchors": [
+    {
+      "id": "ab-p001-01",
+      "scanPage": 7,
+      "printedPage": 1,
+      "label": "Opening passage · §1",
+      "image": "assets/passages/ab-p001-01.webp",
+      "bbox": [
+        0.02,
+        0.23,
+        0.48,
+        0.36
+      ],
+      "status": "Source anchor",
+      "transcription": null,
+      "translation": null,
+      "review": "Crop location checked against the supplied printed scan. Unicode transcription and independent translation are not yet certified."
+    },
+    {
+      "id": "ab-p001-02",
+      "scanPage": 7,
+      "printedPage": 1,
+      "label": "Opening passage · §2",
+      "image": "assets/passages/ab-p001-02.webp",
+      "bbox": [
+        0.02,
+        0.365,
+        0.48,
+        0.48
+      ],
+      "status": "Source anchor",
+      "transcription": null,
+      "translation": null,
+      "review": "Crop location checked against the supplied printed scan. Unicode transcription and independent translation are not yet certified."
+    },
+    {
+      "id": "ab-p001-03",
+      "scanPage": 7,
+      "printedPage": 1,
+      "label": "Opening passage · §3",
+      "image": "assets/passages/ab-p001-03.webp",
+      "bbox": [
+        0.02,
+        0.486,
+        0.48,
+        0.565
+      ],
+      "status": "Source anchor",
+      "transcription": null,
+      "translation": null,
+      "review": "Crop location checked against the supplied printed scan. Unicode transcription and independent translation are not yet certified."
+    },
+    {
+      "id": "ab-p001-04",
+      "scanPage": 7,
+      "printedPage": 1,
+      "label": "Opening passage · §4",
+      "image": "assets/passages/ab-p001-04.webp",
+      "bbox": [
+        0.02,
+        0.575,
+        0.48,
+        0.74
+      ],
+      "status": "Source anchor",
+      "transcription": null,
+      "translation": null,
+      "review": "Crop location checked against the supplied printed scan. Unicode transcription and independent translation are not yet certified."
+    },
+    {
+      "id": "ab-p001-05",
+      "scanPage": 7,
+      "printedPage": 1,
+      "label": "Opening passage · §5",
+      "image": "assets/passages/ab-p001-05.webp",
+      "bbox": [
+        0.02,
+        0.816,
+        0.48,
+        0.95
+      ],
+      "status": "Source anchor",
+      "transcription": null,
+      "translation": null,
+      "review": "Crop location checked against the supplied printed scan. Unicode transcription and independent translation are not yet certified."
+    },
+    {
+      "id": "ab-p004-10",
+      "scanPage": 10,
+      "printedPage": 4,
+      "label": "Mungthila context · §10",
+      "image": "assets/passages/ab-p004-10.webp",
+      "bbox": [
+        0.02,
+        0.063,
+        0.48,
+        0.275
+      ],
+      "status": "Source anchor",
+      "transcription": null,
+      "translation": null,
+      "review": "Crop location checked against the supplied printed scan. Unicode transcription and independent translation are not yet certified."
+    },
+    {
+      "id": "ab-p004-11",
+      "scanPage": 10,
+      "printedPage": 4,
+      "label": "Genealogical passage · §11",
+      "image": "assets/passages/ab-p004-11.webp",
+      "bbox": [
+        0.02,
+        0.312,
+        0.48,
+        0.57
+      ],
+      "status": "Source anchor",
+      "transcription": null,
+      "translation": null,
+      "review": "Crop location checked against the supplied printed scan. Unicode transcription and independent translation are not yet certified."
+    },
+    {
+      "id": "ab-p004-12",
+      "scanPage": 10,
+      "printedPage": 4,
+      "label": "Descent passage · §12",
+      "image": "assets/passages/ab-p004-12.webp",
+      "bbox": [
+        0.02,
+        0.58,
+        0.48,
+        0.68
+      ],
+      "status": "Source anchor",
+      "transcription": null,
+      "translation": null,
+      "review": "Crop location checked against the supplied printed scan. Unicode transcription and independent translation are not yet certified."
+    },
+    {
+      "id": "ab-p004-13",
+      "scanPage": 10,
+      "printedPage": 4,
+      "label": "Bithila context · §13",
+      "image": "assets/passages/ab-p004-13.webp",
+      "bbox": [
+        0.02,
+        0.68,
+        0.48,
+        0.8
+      ],
+      "status": "Source anchor",
+      "transcription": null,
+      "translation": null,
+      "review": "Crop location checked against the supplied printed scan. Unicode transcription and independent translation are not yet certified."
+    },
+    {
+      "id": "ab-p007-05",
+      "scanPage": 13,
+      "printedPage": 7,
+      "label": "Shared-throne context · §5",
+      "image": "assets/passages/ab-p007-05.webp",
+      "bbox": [
+        0.02,
+        0.12,
+        0.48,
+        0.45
+      ],
+      "status": "Source anchor",
+      "transcription": null,
+      "translation": null,
+      "review": "Crop location checked against the supplied printed scan. Unicode transcription and independent translation are not yet certified."
+    },
+    {
+      "id": "ab-p007-06",
+      "scanPage": 13,
+      "printedPage": 7,
+      "label": "Envoy passage · §6",
+      "image": "assets/passages/ab-p007-06.webp",
+      "bbox": [
+        0.02,
+        0.503,
+        0.48,
+        0.715
+      ],
+      "status": "Source anchor",
+      "transcription": null,
+      "translation": null,
+      "review": "Crop location checked against the supplied printed scan. Unicode transcription and independent translation are not yet certified."
+    },
+    {
+      "id": "ab-p007-07",
+      "scanPage": 13,
+      "printedPage": 7,
+      "label": "Reception passage · §7",
+      "image": "assets/passages/ab-p007-07.webp",
+      "bbox": [
+        0.02,
+        0.725,
+        0.48,
+        0.9
+      ],
+      "status": "Source anchor",
+      "transcription": null,
+      "translation": null,
+      "review": "Crop location checked against the supplied printed scan. Unicode transcription and independent translation are not yet certified."
+    }
+  ]
+}
