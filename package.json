@@ -1,0 +1,1 @@
+{"name":"tai-ahom-research-atlas","version":"0.2.0","private":true,"scripts":{"test":"node --test scripts/core.test.cjs","check":"python3 scripts/validate.py","build":"python3 scripts/build.py"}}

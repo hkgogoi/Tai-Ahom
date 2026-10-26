@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/hkgogoi/Tai-Ahom/blob/main/schema/reading-pack.schema.json",
+  "title": "Tai-Ahom private reading pack",
+  "type": "object",
+  "required": ["schema", "version", "records"],
+  "properties": {
+    "schema": {"const": "tai-ahom-reading-pack"},
+    "version": {"const": 1},
+    "created": {"type": "string"},
+    "publication": {"const": "private-research-only"},
+    "records": {
+      "type": "array", "minItems": 1, "maxItems": 10000,
+      "items": {
+        "type": "object",
+        "required": ["id", "work", "source_record_id", "folio", "confidence", "headword_confidence", "layers", "notes", "reading_status"],
+        "properties": {
+          "id": {"type": "string"},
+          "work": {"type": "string"},
+          "source_record_id": {"type": "string"},
+          "folio": {"type": ["string", "null"]},
+          "confidence": {"enum": ["B", "C", "unreviewed"]},
+          "headword_confidence": {"enum": ["A", "B", "C", null]},
+          "notes": {"type": "array", "items": {"type": "string", "maxLength": 20000}},
+          "reading_status": {"type": "string"},
+          "source_record": {"type": ["object", "null"]},
+          "layers": {
+            "type": "object",
+            "properties": {
+              "inherited_transcription": {"type": ["string", "null"], "maxLength": 200000},
+              "english": {"type": ["string", "null"], "maxLength": 200000},
+              "formula": {"type": ["string", "null"]},
+              "assamese_in_ahom_script": {"type": ["string", "null"]},
+              "punctuation": {"type": ["string", "null"]},
+              "romanization": {"type": ["string", "null"]},
+              "assamese_romanization": {"type": ["string", "null"]},
+              "editorial_reconstruction": {"type": ["string", "null"]},
+              "interpretation": {"type": ["string", "null"]}
+            }
+          }
+        }
+      }
+    }
+  },
+  "description": "Runtime validation also requires known unique record IDs, consistent work/folio/confidence metadata, and no private-use or replacement glyphs in searchable Ahom fields."
+}

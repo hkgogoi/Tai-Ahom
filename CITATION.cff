@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "Cite the original scholarly source and the stable Atlas record ID as well as this software."
+title: "Tai-Ahom Research Atlas"
+type: software
+version: 0.2.0
+date-released: 2026-10-26
+authors:
+  - family-names: "Tai-Ahom Research Atlas contributors"
+repository-code: "https://github.com/hkgogoi/Tai-Ahom"
+license: MIT
+abstract: "Source catalogue, public locators, transparent coverage and device-local Unicode reading tools. The software licence does not relicense source texts."

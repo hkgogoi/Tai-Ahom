@@ -1,0 +1,10 @@
+.openai/
+private/
+private-reading/
+*Reading_Pack*.json
+__pycache__/
+*.zip
+# Generated public bundles; rebuilt by Python in the Pages workflow.
+dist/catalogue-data.js
+dist/records-data.js
+
