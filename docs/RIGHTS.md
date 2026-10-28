@@ -21,3 +21,7 @@ The user's private pack is a transformation of existing user-provided material, 
 Add a source-specific permission or licence record, including exact material, rightsholder/licensor, licence URL or permission evidence, attribution and any restrictions. Verify the permitted scope before changing `publication` from `metadata-only`. Do not assign the software's MIT licence to source texts.
 
 Existing Drive sharing settings and source permissions were not changed. No permission request was sent to a third party.
+
+## Nanzhao study integration, 28 October 2026
+
+The completed 32-page research dossier is represented by bibliographical metadata, original summary text attributed to the report, and its existing Drive link. The report itself, source plates, manuscript scans, companion materials and third-party publications are not added to the public repository or build. Their reproduction permissions have not been established by this integration. Drive access settings are preserved. The software licence does not extend to the linked report or its sources.

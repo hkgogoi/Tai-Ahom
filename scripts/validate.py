@@ -26,12 +26,29 @@ bar=[r for r in records if r['work']=='bar-amra']
 assert collections.Counter(r['confidence'] for r in bar)=={'B':819,'C':417}
 assert sum(r['headword_confidence']=='A' for r in bar)==4
 assert sum('unresolved-glyph' in r['flags'] for r in records if r['work']=='ma-likha')==5
-assert len(read('catalogue.json'))==123
-assert len({s['id'] for s in read('catalogue.json')})==123
-assert all(s['url'].startswith('https://drive.google.com/') for s in read('catalogue.json'))
+catalogue=read('catalogue.json')
+assert len(catalogue)==124
+assert len({s['id'] for s in catalogue})==124
+assert all(s['url'].startswith('https://drive.google.com/') for s in catalogue)
+additions=read('catalogue-additions.json')
+assert catalogue[121:]==additions and len(additions)==3
+sources={s['id']:s for s in catalogue}
+studies=read('research.json')['studies']
+assert len({s['id'] for s in studies})==len(studies)
+for study in studies:
+    source=sources[study['source_id']]
+    assert source['research_id']==study['id'] and source['publication']=='link-only'
+    assert source['bibliography'] and source['description'] and source['subjects']
+    assert {c['category'] for c in study['claims']}=={'observation','hypothesis'}
+nanzhao=next(s for s in studies if s['id']=='tai-ahom-nanzhao')
+source=sources[nanzhao['source_id']]
+assert source['id']=='1_FhHnRLXQVE4gyfxnVRxzDeVyU0t1Z_W'
+assert source['date']=='2026-10-28' and source['pages']==32
+assert source['url']=='https://drive.google.com/file/d/1_FhHnRLXQVE4gyfxnVRxzDeVyU0t1Z_W/view'
+assert {c['label'] for c in nanzhao['claims']}=={'Documented regional evidence','Plausible historical connections','Unverified genealogy'}
 assert 'PRIVATE_READING_PACK =' not in (ROOT/'dist/reading-data.js').read_text()
 for file in (ROOT/'dist').rglob('*'):
     assert file.suffix.lower() not in {'.pdf','.epub','.webp','.jpg','.jpeg'},f'Unexpected published source image: {file}'
     if file.is_file() and file.suffix in {'.js','.html','.css'}:
         assert 'se=2026-' not in file.read_text(),f'Unexpected temporary download credential: {file}'
-print('PASS: 4,637 unique locators; 123 links; coverage, confidence and public-content boundary.')
+print('PASS: 4,637 unique locators; 124 links; research references, coverage, confidence and public-content boundary.')

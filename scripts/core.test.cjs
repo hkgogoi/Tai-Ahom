@@ -1,6 +1,8 @@
 const {test}=require('node:test');
 const assert=require('node:assert/strict');
 const C=require('../dist/core.js');
+const fs=require('node:fs');
+const path=require('node:path');
 const A=String.fromCodePoint(0x11700,0x11727),B=String.fromCodePoint(0x11700,0x11726);
 const works=[{id:'test',title:'Test manuscript',identifier:'TEST',subjects:['ritual']}];
 const index=[{id:'test:1',work:'test',source_record_id:'1',folio:'1r',confidence:'B',headword_confidence:'A'},
@@ -19,3 +21,17 @@ test('PUA and replacement glyphs cannot enter searchable Ahom',()=>{for(const te
 test('Empty supplied text remains empty, not reconstructed',()=>{const p=pack();p.records[0].layers.inherited_transcription='';assert.equal(C.validatePack(p,index)[0].layers.inherited_transcription,'');});
 test('Rendered strings escape active HTML',()=>assert.equal(C.escapeHtml('<img src=x onerror="x">'),'&lt;img src=x onerror=&quot;x&quot;&gt;'));
 test('Unsupported schema and invalid layer types reject',()=>{const p=pack();p.version=2;assert.throws(()=>C.validatePack(p,index));const t=pack();t.records[0].layers.english={html:'x'};assert.throws(()=>C.validatePack(t,index));});
+test('Research source discovery searches description, subjects, bibliography and date',()=>{
+  const sources=JSON.parse(fs.readFileSync(path.join(__dirname,'../data/catalogue.json'),'utf8'));
+  const id='1_FhHnRLXQVE4gyfxnVRxzDeVyU0t1Z_W';
+  for(const q of ['Nanzhao','Yuan shi','historical geography','Hemanta Gogoi','2026-10-28','Shan migration']){
+    assert.ok(C.filterSources(sources,{q}).some(s=>s.id===id),q);
+  }
+  assert.equal(C.filterSources(sources,{q:'Nanzhao',category:'06_Other_Editions_and_Research'})[0].id,id);
+  assert.equal(C.filterSources(sources,{q:'Nanzhao',category:'02_Original_Manuscripts'}).length,0);
+  assert.equal(C.filterSources(sources,{q:'nonexistent research xyz'}).length,0);
+});
+test('Older sources remain searchable without new optional metadata',()=>{
+  const sources=[{title:'Bar Amra',filename:'Bar_Amra.pdf',category:'03_Source_Transcriptions'}];
+  assert.deepEqual(C.filterSources(sources,{q:'Bar Amra'}),sources);
+});

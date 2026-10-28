@@ -5,6 +5,10 @@
   // Do not strip Ahom combining marks. Only Latin combining accents are folded.
   const fold=value=>String(value??'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/\s+/g,' ').trim();
   const matches=(query,fields)=>fold(query).split(' ').filter(Boolean).every(token=>fold(fields.join(' ')).includes(token));
+  function filterSources(sources,filters={}){
+    return sources.filter(s=>(!filters.category||s.category===filters.category)&&matches(filters.q,
+      [s.title,s.filename,s.category,s.date,s.bibliography,s.description,...(s.subjects||[])]));
+  }
   function filterRecords(records,works,readings,filters={}){
     const byWork=new Map(works.map(w=>[w.id,w]));
     return records.filter(r=>{
@@ -33,5 +37,5 @@
     }
     return result;
   }
-  return {escapeHtml,fold,matches,filterRecords,validatePack,hasPUA};
+  return {escapeHtml,fold,matches,filterSources,filterRecords,validatePack,hasPUA};
 });

@@ -2,8 +2,8 @@ cff-version: 1.2.0
 message: "Cite the original scholarly source and the stable Atlas record ID as well as this software."
 title: "Tai-Ahom Research Atlas"
 type: software
-version: 0.2.0
-date-released: 2026-10-26
+version: 0.2.1
+date-released: 2026-10-28
 authors:
   - family-names: "Tai-Ahom Research Atlas contributors"
 repository-code: "https://github.com/hkgogoi/Tai-Ahom"

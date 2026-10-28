@@ -1,14 +1,16 @@
 # Tai-Ahom Research Atlas
 
-A mobile-friendly research archive for the Tai-Ahom manuscript collection. Release **0.2.0**, 26 October 2026.
+A mobile-friendly research archive for the Tai-Ahom manuscript collection. Release **0.2.1**, 28 October 2026.
 
-The repository preserves source identifiers, bibliographical references, coverage and uncertainty. It indexes **4,637 records** across seven working collections and links **123 source files**. Original manuscripts and existing Drive files are preserved.
+The repository preserves source identifiers, bibliographical references, coverage and uncertainty. It indexes **4,637 records** across seven working collections and links **124 source files**. Original manuscripts and existing Drive files are preserved.
 
 ## Public archive and private readings
 
 **The public repository contains metadata, not the complete third-party transcriptions or scans.** The optional private reading pack contains the genuine Unicode readings and corresponding English from the user's existing collection. Load it in **Load readings**; it is searched on the device, without an upload. The private offline edition already includes it.
 
-The collection's 14 October catalogue lists 118 PDFs and three other files. Two links to the 19 October Bar Amra revision are added here. These are dated inventory figures, not a claim that every linked file is publicly accessible.
+The collection's 14 October catalogue lists 118 PDFs and three other files. Later additions are two links to the 19 October Bar Amra revision and the 32-page [Tai-Ahom and Nanzhao research study](https://drive.google.com/file/d/1_FhHnRLXQVE4gyfxnVRxzDeVyU0t1Z_W/view), completed 28 October. These are dated inventory figures, not a claim that every linked file is publicly accessible.
+
+Search Sources for **Nanzhao**, migration or historical geography. The catalogue includes the report's full title, date, bibliographical description and subjects. Research presents an attributed summary distinguishing documented regional contact and continuity, plausible transmission mechanisms and unverified dynastic descent. The PDF and its source plates remain linked in Drive; no redistribution permission is inferred.
 
 | Collection | Numbered records | Source revision |
 |---|---:|---|
@@ -31,6 +33,7 @@ Kham Kau Phi Dam is an oral ritual text, not a manuscript. Lakni is a partial ma
 - Stable record links, source citations, local search exports, accessible mobile layout and bundled Ahom font.
 - Optional device-local storage for imported readings; no login, analytics, backend or upload endpoint.
 - The earlier Lengdon–Nimi dossier is retained as an explicitly inherited interpretive layer.
+- The Nanzhao study is discoverable through Sources and Research, with separate evidence and hypothesis labels.
 
 ## Run locally
 
@@ -76,12 +79,12 @@ The import script reads JSON members; it does not execute any supplied archive s
 
 ## Repository structure
 
-- `data/catalogue.json`: dated bibliography and links.
+- `data/catalogue.json`: dated bibliography and links; `catalogue-additions.json` preserves post-inventory additions during re-import.
 - `data/works.json`: collection IDs, source credits, scope and subject tags.
 - `data/index/*.json`: public record locators and review metadata, without inherited readings.
 - `data/bar-amra-coverage.json`: counts, folios and all 65 research targets.
 - `data/rights.json`: source-specific publication decisions and evidence.
-- `data/research.json`: the inherited historical dossier, explicitly labelled.
+- `data/research.json`: the inherited historical dossier, explicitly labelled, plus separately attributed research-study summaries.
 - `dist/`: mobile interface, local importer and licensed font.
 - `scripts/`: deterministic build, import, preservation audit and tests.
 - `schema/`: reading-pack schema; runtime validation additionally checks against known record IDs.

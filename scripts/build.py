@@ -13,7 +13,7 @@ def main():
     parser.add_argument('--private-output',type=Path)
     args=parser.parse_args()
     if bool(args.private_pack) != bool(args.private_output): parser.error('Private pack and private output must be provided together.')
-    data={'version':'0.2.0','date':'2026-10-26','works':load('works.json'),'catalogue':load('catalogue.json'),
+    data={'version':'0.2.1','date':'2026-10-28','works':load('works.json'),'catalogue':load('catalogue.json'),
           'coverage':load('bar-amra-coverage.json'),'research':load('research.json'),'rights':load('rights.json'),'report':load('import-report.json')}
     dist=ROOT/'dist'
     (dist/'catalogue-data.js').write_text('window.ARCHIVE = '+json.dumps(data,ensure_ascii=False,separators=(',',':'))+';\n')

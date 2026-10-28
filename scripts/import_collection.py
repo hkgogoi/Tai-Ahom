@@ -39,10 +39,8 @@ def main(inputs, private):
         bibliographical.append({'id': row['id'], 'title': title, 'filename': row['title'], 'format': row['mime_type'],
             'category': row['category'], 'url': row['url'], 'catalogued_on': '2026-10-14',
             'access': 'Existing Drive permissions apply', 'publication': 'link-only'})
-    bibliographical.extend([
-        {'id': '1OfhHTd1zTW8gK5cZE5NzNP1Zkgrz7tLS', 'title': 'Bar Amra: transcription evidence and coverage review, revision 2', 'filename': 'Bar_Amra_Evidence_Review_20261019_r2.pdf', 'format': 'application/pdf', 'category': '03_Source_Transcriptions', 'url': drive('1OfhHTd1zTW8gK5cZE5NzNP1Zkgrz7tLS'), 'catalogued_on': '2026-10-26', 'access': 'Existing Drive permissions apply', 'publication': 'link-only'},
-        {'id': '16MoqMHeFUkVkadew5LQm473ZmGJsTUP0', 'title': 'Bar Amra Unicode mobile edition, revision 2', 'filename': 'Bar_Amra_Unicode_Mobile_20261019_r2.pdf', 'format': 'application/pdf', 'category': '03_Source_Transcriptions', 'url': drive('16MoqMHeFUkVkadew5LQm473ZmGJsTUP0'), 'catalogued_on': '2026-10-26', 'access': 'Existing Drive permissions apply', 'publication': 'link-only'}
-    ])
+    # Keep later research additions when rebuilding the dated 121-item inventory.
+    bibliographical.extend(json.loads((ROOT / 'data/catalogue-additions.json').read_text()))
     works, records, originals = [], [], {}
     titles = {'ming': 'Ming Mvng Lung Phai', 'nemi': 'Nemi Mang Phura', 'pvn': 'Pvn Ko Mvng', 'ma_likha': 'Ma Likha Lit', 'lakni': 'Lakni', 'kham_kau': 'Kham Kau Phi Dam'}
     subjects = {'ming': ['ritual', 'spirits', 'warfare'], 'nemi': ['Buddhism', 'Jataka', 'narrative'], 'pvn': ['creation', 'cosmology'], 'ma_likha': ['court poetry'], 'lakni': ['calendar', 'divination'], 'kham_kau': ['ritual', 'oral tradition']}

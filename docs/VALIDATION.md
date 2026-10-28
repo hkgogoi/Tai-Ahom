@@ -1,5 +1,17 @@
 # Release validation
 
+## Release 0.2.1, 28 October 2026
+
+- Source catalogue extended to 124 links: the original 123 entries are retained unchanged, followed by the 32-page Nanzhao report with its full title, completion date, bibliographical description, subjects and existing Drive URL.
+- Research adds a separately attributed study summary with documented evidence, plausible connections and unverified genealogy labelled distinctly. The earlier Lengdon–Nimi dossier is retained unchanged.
+- Source search covers descriptive metadata and subjects; regression tests cover research discovery, category filters and older entries without optional metadata.
+- The catalogue supplement is consumed by the original importer, preserving later research additions on re-import.
+- Record indexes, work metadata, Bar Amra coverage, source fingerprints and the private reading stub are unchanged. The 26 October import report remains dated historical evidence.
+- Build, archive validation, all 13 automated tests and JavaScript syntax checks passed. Render smoke checks passed for Home, Sources, Research, Coverage, Explore and Load readings. A comparison with the 0.2.0 commit confirmed all 123 prior catalogue entries and the earlier dossier unchanged, plus 13 protected files byte-identical. Deployment and live-site results are recorded in the update's completion report.
+- The Drive connector successfully read the exact report URL and metadata. Anonymous visitors may still require access; no Drive permissions were changed. No report PDF, source plates, scans or third-party publications are copied into the public tree.
+
+## Earlier release record
+
 Release 0.2.0, 26 October 2026.
 
 ## Completed checks
