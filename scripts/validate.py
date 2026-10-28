@@ -3,6 +3,7 @@
 import collections
 import json
 import re
+from html.parser import HTMLParser
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 def read(name): return json.loads((ROOT/'data'/name).read_text())
@@ -47,6 +48,15 @@ assert source['date']=='2026-10-28' and source['pages']==32
 assert source['url']=='https://drive.google.com/file/d/1_FhHnRLXQVE4gyfxnVRxzDeVyU0t1Z_W/view'
 assert {c['label'] for c in nanzhao['claims']}=={'Documented regional evidence','Plausible historical connections','Unverified genealogy'}
 assert 'PRIVATE_READING_PACK =' not in (ROOT/'dist/reading-data.js').read_text()
+class Assets(HTMLParser):
+    def handle_starttag(self,tag,attrs):
+        attrs=dict(attrs)
+        if tag=='script' or (tag=='link' and attrs.get('rel')=='stylesheet'):
+            url=attrs['src' if tag=='script' else 'href']
+            version=json.loads((ROOT/'package.json').read_text())['version']
+            assert url.endswith('?v='+version),f'Unversioned release asset: {url}'
+            assert (ROOT/'dist'/url.split('?')[0]).is_file(),url
+Assets().feed((ROOT/'dist/index.html').read_text())
 for file in (ROOT/'dist').rglob('*'):
     assert file.suffix.lower() not in {'.pdf','.epub','.webp','.jpg','.jpeg'},f'Unexpected published source image: {file}'
     if file.is_file() and file.suffix in {'.js','.html','.css'}:
