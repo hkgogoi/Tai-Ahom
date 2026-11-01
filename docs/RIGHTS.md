@@ -25,3 +25,7 @@ Existing Drive sharing settings and source permissions were not changed. No perm
 ## Nanzhao study integration, 28 October 2026
 
 The completed 32-page research dossier is represented by bibliographical metadata, original summary text attributed to the report, and its existing Drive link. The report itself, source plates, manuscript scans, companion materials and third-party publications are not added to the public repository or build. Their reproduction permissions have not been established by this integration. Drive access settings are preserved. The software licence does not extend to the linked report or its sources.
+
+## Coin-study integration, 1 November 2026
+
+Both existing reports were read through their verified Drive URLs and linked with distinct bibliographical records and original, attributed summaries. Owner-only permission metadata was reported for each file; sharing settings were not changed. The nine-page report and 15-page supplement remain separate and unchanged. No PDFs, coin photographs, source-pack issues, restricted Rhodes scan or unavailable Chowdhuri–Ray article are copied to the public repository. Existing Allan and Deyell records are reused. Direct access in the supplement describes its evidence review, not a public redistribution licence or an independent Atlas authentication.

@@ -1,5 +1,14 @@
 # Release validation
 
+## Release 0.2.2, 1 November 2026
+
+- Added two distinct, link-only records for the completed 29 October coin studies: the unchanged nine-page illustrated report and 15-page source-critical supplement. Catalogue total: 126; the earlier 124 records are unchanged.
+- Research summaries attribute the royal and trade interpretations to the reports, identify Singh's complete article as directly examined in the supplement, retain the unread/restricted Rhodes 1975 and indirect Chowdhuri–Ray/Bertsch evidence, and attach the 1978 correction when referencing Deyell.
+- Related links reuse existing Allan and Deyell IDs and connect the two studies. Exact-ID catalogue links replace the previous hard-coded Nanzhao query for each Research study.
+- Both Drive URLs and document metadata were read successfully. Owner-only permissions were reported; no sharing change, document recreation, scan or article redistribution occurred.
+- Public build, archive validation, all 15 automated tests, JavaScript syntax and whitespace checks passed. Seven route render smoke checks verified distinct Drive links, exact record selection and evidence-level text. A preservation comparison confirmed the earlier catalogue/dossier/Nanzhao study and 16 protected files unchanged, including all seven manuscript indexes and private reading data/schema/import code.
+- Release asset URLs use 0.2.2 to refresh cached application and generated catalogue data. The dated historical import report is unchanged. GitHub Actions deployment and published-browser search verification are checked separately after publication.
+
 ## Release 0.2.1, 28 October 2026
 
 - Source catalogue extended to 124 links: the original 123 entries are retained unchanged, followed by the 32-page Nanzhao report with its full title, completion date, bibliographical description, subjects and existing Drive URL.

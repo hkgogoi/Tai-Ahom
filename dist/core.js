@@ -6,7 +6,7 @@
   const fold=value=>String(value??'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/\s+/g,' ').trim();
   const matches=(query,fields)=>fold(query).split(' ').filter(Boolean).every(token=>fold(fields.join(' ')).includes(token));
   function filterSources(sources,filters={}){
-    return sources.filter(s=>(!filters.category||s.category===filters.category)&&matches(filters.q,
+    return sources.filter(s=>(!filters.id||s.id===filters.id)&&(!filters.category||s.category===filters.category)&&matches(filters.q,
       [s.title,s.filename,s.category,s.date,s.bibliography,s.description,...(s.subjects||[])]));
   }
   function filterRecords(records,works,readings,filters={}){

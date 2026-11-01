@@ -35,3 +35,21 @@ test('Older sources remain searchable without new optional metadata',()=>{
   const sources=[{title:'Bar Amra',filename:'Bar_Amra.pdf',category:'03_Source_Transcriptions'}];
   assert.deepEqual(C.filterSources(sources,{q:'Bar Amra'}),sources);
 });
+test('Both completed coin studies are separately discoverable across historical subjects',()=>{
+  const sources=JSON.parse(fs.readFileSync(path.join(__dirname,'../data/catalogue.json'),'utf8'));
+  const ids=['1U4IjtMHnzWU6TEysVibvMow2yO_6ibz6','1CwUu79NjBFvqEbm5AFzvcvEarN1aNrLC'];
+  for(const q of ['Chinese coin','Jayadhvaja','Pratapa','Saka 1570','Tibet','Yunnan','2026-10-29','source criticism']){
+    const found=C.filterSources(sources,{q,category:'06_Other_Editions_and_Research'}).map(s=>s.id);
+    for(const id of ids)assert.ok(found.includes(id),q+' / '+id);
+  }
+  assert.deepEqual(C.filterSources(sources,{q:'Ahom_Chinese_Coin_Source_Critical_Supplement_20261029.pdf'}).map(s=>s.id),[ids[1]]);
+});
+test('Exact catalogue links select their own study and preserve query/category filters',()=>{
+  const sources=JSON.parse(fs.readFileSync(path.join(__dirname,'../data/catalogue.json'),'utf8'));
+  for(const id of ['1_FhHnRLXQVE4gyfxnVRxzDeVyU0t1Z_W','1U4IjtMHnzWU6TEysVibvMow2yO_6ibz6','1CwUu79NjBFvqEbm5AFzvcvEarN1aNrLC']){
+    assert.deepEqual(C.filterSources(sources,{id}).map(s=>s.id),[id]);
+    assert.equal(C.filterSources(sources,{id,category:'02_Original_Manuscripts'}).length,0);
+    assert.equal(C.filterSources(sources,{id,q:'nonexistent research xyz'}).length,0);
+  }
+  assert.equal(C.filterSources(sources,{id:'unknown'}).length,0);
+});
