@@ -80,5 +80,13 @@
     "origins": [
       "https://www.burmalibrary.org/sites/burmalibrary.org/files/obl/ahom-assamese-english_dictionary.pdf"
     ]
+  },
+  "1MB9CO_ywzpHOvSX9cLyOMguLwhitI1th": {
+    "filename": "tai-ahom-sound-system-2020.pdf",
+    "sha256": "9ec2be0b9d5e34320a457712fe80286023c3acd1fa1f44be191d5abaf937ac54",
+    "bytes": 2868726,
+    "credit": "Poppy Gogoi, Stephen Morey and Pittayawat Pittayaporn. Journal of the Southeast Asian Linguistics Society 13.2 (2020), pp. 14–42. University of Hawaiʻi Press. Publisher PDF, unchanged.",
+    "rights": "Creative Commons Attribution Licence, as stated in the article.",
+    "evidence_url": "https://hdl.handle.net/10524/52468"
   }
 }

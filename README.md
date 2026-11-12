@@ -1,6 +1,6 @@
 # Tai-Ahom Research Atlas
 
-A mobile-friendly research archive for the Tai-Ahom manuscript collection. Release **0.2.3**, 12 November 2026.
+A mobile-friendly research archive for the Tai-Ahom manuscript collection. Release **0.2.4**, 12 November 2026.
 
 The Atlas indexes **4,637 records** across seven working collections and retains **126 catalogue entries**. [Documents and sources](https://hkgogoi.github.io/Tai-Ahom/#sources?available=1) lists the public PDFs with direct downloads and provenance. Entries awaiting publication clearance remain searchable.
 
