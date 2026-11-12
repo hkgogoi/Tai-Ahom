@@ -7,4 +7,5 @@ __pycache__/
 # Generated public bundles; rebuilt by Python in the Pages workflow.
 dist/catalogue-data.js
 dist/records-data.js
+dist/documents/
 

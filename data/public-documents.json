@@ -1,0 +1,84 @@
+{
+  "1x3rTiprI0aOLnnB22iRYwwiJ1fFDzxpZ": {
+    "filename": "ahom-buranji-1930.pdf",
+    "sha256": "92bbd81bcc7e75b5f585ed4570b2d285ce1bb250ccae26108251d67dab835709",
+    "bytes": 59082699,
+    "credit": "1930 edition. Golap Chandra Barua, translator and editor. Published under the authority of the Assam Administration; digitized by the Digital Library of India and Internet Archive.",
+    "rights": "Public domain (India and United States)",
+    "evidence_url": "https://archive.org/details/in.ernet.dli.2015.450867",
+    "origins": [
+      "https://ia800408.us.archive.org/18/items/in.ernet.dli.2015.450867/2015.450867.Ahom-buranji_text.pdf",
+      "https://ia600408.us.archive.org/18/items/in.ernet.dli.2015.450867/2015.450867.Ahom-buranji_text.pdf"
+    ]
+  },
+  "1Of-HTvLzlgHWeu5WbiZxO_ysc1Ycgw41": {
+    "filename": "interpretation-ahom-extract-1837.pdf",
+    "sha256": "6e1feb40cd289c1c1e5ff00f0ba554ab68ace4c6a5c7c3127edf08ae996a7539",
+    "bytes": 544916,
+    "credit": "Francis Jenkins, Journal of the Asiatic Society of Bengal, 1837. Historical scan with its digitization marks.",
+    "rights": "Public domain",
+    "evidence_url": "https://www.biodiversitylibrary.org/page/40077770"
+  },
+  "1Xx1M0GySeMj5T916tseP5XzeBlp5AC8J": {
+    "filename": "alphabets-tai-language-1837.pdf",
+    "sha256": "7beb641ec02adc959fe7534df44f0863cc835077b32bbf545ee61b69355df6ac",
+    "bytes": 797141,
+    "credit": "Nathan Brown, Journal of the Asiatic Society of Bengal, 1837. Historical scan with its digitization marks.",
+    "rights": "Public domain",
+    "evidence_url": "https://www.biodiversitylibrary.org/part/366902"
+  },
+  "13qVvZZh4QhK_r-shDAGBJ4593t7C5QNe": {
+    "filename": "metadata-ahom-manuscripts-morey-2015.pdf",
+    "sha256": "f8551e949fa14523eec6c348581067a1d8037c5432d013f29e2f55035f884b3d",
+    "bytes": 736109,
+    "credit": "Stephen Morey, Metadata and endangered archives: lessons from the Ahom Manuscripts Project, Open Book Publishers (2015). Publisher PDF, unchanged.",
+    "rights": "Chapter: CC BY 4.0. Other material retains its stated terms.",
+    "evidence_url": "https://doi.org/10.11647/OBP.0052.02"
+  },
+  "1vdrBieFXCCLEqqAZWHBWQ-h7Cql0gLrz": {
+    "filename": "ahom-lengdon-nimi-library-revision.pdf",
+    "sha256": "5b347b7ddcf79c3d974374984e47ed30e2a7531f811ebfdc5dff9678e65c7101",
+    "bytes": 954098,
+    "credit": "Tai-Ahom Research Atlas project research dossier, library revision. Historical plates are from the original 1920 and 1930 printed editions.",
+    "rights": "Project publication"
+  },
+  "1WrmUJ6XC1afQEHOhXMcdj6THZT1RLqYk": {
+    "filename": "ahom-lengdon-nimi-research.pdf",
+    "sha256": "dbce42e70199e4bcbd6acf068d0ccd178ce1baaffc81a751201f16be19ecd838",
+    "bytes": 929108,
+    "credit": "Tai-Ahom Research Atlas project research dossier. Historical plates are from the original 1920 and 1930 printed editions.",
+    "rights": "Project publication"
+  },
+  "1_FhHnRLXQVE4gyfxnVRxzDeVyU0t1Z_W": {
+    "filename": "tai-ahom-nanzhao-research.pdf",
+    "sha256": "a141079ff26fb12e41d8e8f175ea1ee07d867c684e20cdc624246656a40f31f1",
+    "bytes": 1501701,
+    "credit": "Tai-Ahom Research Atlas project report. Public copy with revised source links. Historical plates are from the 1900 and 1930 editions; maps use Natural Earth data.",
+    "rights": "Project publication"
+  },
+  "1U4IjtMHnzWU6TEysVibvMow2yO_6ibz6": {
+    "filename": "chinese-character-ahom-coin-report.pdf",
+    "sha256": "43027a817af9f14d9863e1be4b8db3f0c51bc0cb674aac77bf15351314156601",
+    "bytes": 93255,
+    "credit": "Tai-Ahom Research Atlas project report. Public reading copy with the third-party cover photograph omitted.",
+    "rights": "Project publication"
+  },
+  "1CwUu79NjBFvqEbm5AFzvcvEarN1aNrLC": {
+    "filename": "chinese-character-ahom-coin-supplement.pdf",
+    "sha256": "e2064c3480be386a1b29bb5f136bcc78f90b178c0f8eb240ab04e713c58816df",
+    "bytes": 103792,
+    "credit": "Tai-Ahom Research Atlas project research supplement. Public copy with revised source links.",
+    "rights": "Project publication"
+  },
+  "1FGEOFNjBa3iIVIN-C3SFc3OAH2c9XUAQ": {
+    "filename": "ahom-assamese-english-dictionary-1920.pdf",
+    "sha256": "d176a6e809c81dd020cf72723bb51e46605fd53a003e07a10b3d7d5f428f74e9",
+    "bytes": 99170584,
+    "credit": "Golap Chandra Borua, compiler. Published under the authority of the Assam Administration, Baptist Mission Press, 1920. Historical scan from the Online Burma/Myanmar Library.",
+    "rights": "Public domain (India and United States).",
+    "evidence_url": "https://www.burmalibrary.org/en/ahom-assamese-english-dictionary",
+    "origins": [
+      "https://www.burmalibrary.org/sites/burmalibrary.org/files/obl/ahom-assamese-english_dictionary.pdf"
+    ]
+  }
+}

@@ -35,6 +35,16 @@ test('Older sources remain searchable without new optional metadata',()=>{
   const sources=[{title:'Bar Amra',filename:'Bar_Amra.pdf',category:'03_Source_Transcriptions'}];
   assert.deepEqual(C.filterSources(sources,{q:'Bar Amra'}),sources);
 });
+test('Download availability combines with source search and category',()=>{
+  const archive=fs.readFileSync(path.join(__dirname,'../dist/catalogue-data.js'),'utf8');
+  const sources=JSON.parse(archive.replace(/^window\.ARCHIVE = /,'').trim().slice(0,-1)).catalogue;
+  const publicSources=C.filterSources(sources,{available:'1'});
+  assert.equal(publicSources.length,Object.keys(JSON.parse(fs.readFileSync(path.join(__dirname,'../data/public-documents.json'),'utf8'))).length);
+  assert.ok(publicSources.every(source=>source.download.href.startsWith('documents/')));
+  const query={available:'1',q:'nanzhao',category:'06_Other_Editions_and_Research'};
+  assert.equal(C.filterSources(sources,query)[0].download.filename,'tai-ahom-nanzhao-research.pdf');
+  assert.equal(C.filterSources(sources,{available:'1',q:'Tungkhungia Buranji'}).length,0);
+});
 test('Both completed coin studies are separately discoverable across historical subjects',()=>{
   const sources=JSON.parse(fs.readFileSync(path.join(__dirname,'../data/catalogue.json'),'utf8'));
   const ids=['1U4IjtMHnzWU6TEysVibvMow2yO_6ibz6','1CwUu79NjBFvqEbm5AFzvcvEarN1aNrLC'];

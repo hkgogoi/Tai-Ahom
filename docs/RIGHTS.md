@@ -1,31 +1,23 @@
 # Reproduction review
 
-Checked 26 October 2026. These are publication decisions for this release, not a blanket legal determination.
+Checked 12 November 2026. Each public PDF has a source-specific entry in [the download manifest](../data/public-documents.json).
 
 | Material | Evidence checked | Release decision |
 |---|---|---|
-| Learn Ahom images and manuscript materials | [Terms and Conditions](https://learnahom.com/terms-and-conditions), sections 1 and 4: personal non-commercial use; written permission for reproduction/distribution | Source links only; no new images or complete transcriptions published |
+| Learn Ahom images and manuscript materials | [Terms and Conditions](https://learnahom.com/terms-and-conditions), sections 1 and 4: personal non-commercial use; written permission for reproduction/distribution | Catalogue references only |
 | SEAlang / Ahom Dictionary Resource Project | Search-indexed homepage states Creative Commons reuse, but the exact licence and Ahom-specific scope could not be established; Ahom pages timed out | Bulk readings held privately pending clarification; bibliographical references and locators public |
-| Six analytical editions and inherited English | Supplied working packages retain translator credits but no clear grant for public redistribution of the complete texts | Source links and metadata public; user-provided readings transformed into a private pack |
+| Six analytical editions and inherited English | Supplied working packages retain translator credits but no clear grant for public redistribution of the complete texts | Catalogue metadata is public; the reading pack is private |
 | Tabassum and Morey (2010) study | Existing study reference and the supplied 19 October evidence review | No pages, figures or complete third-party entries newly published |
-| Ahom-Buranji scan derivatives in the previous import branch | Existing source manifest identifies a 1930 printed edition and an Internet Archive source; no source-specific reproduction basis established here | Prior branch preserved; scans/crops are not brought onto main |
+| Ahom-Buranji | The attached scan title page dates the Assam Administration edition to 1930. The scan matches the Internet Archive download. See the [bibliographic record](https://onlinebooks.library.upenn.edu/webbin/book/lookupid?key=ha103190028), [India Copyright Office](https://copyright.gov.in/Copyright_Act_1957/chapter_v.html) and [Cornell University Library](https://guides.library.cornell.edu/copyright/publicdomain). | The exact 1930 scan is available from the Atlas |
 | New code and adapted Atlas code | Existing project's MIT licence | MIT; preserve notice |
 | Noto Serif Ahom | Bundled SIL Open Font License 1.1 | Font and OFL notice included |
 
-Sources being accessible online or in Drive does not itself establish redistribution permission. A file's historical date is not treated as a sufficient review of the supplied edition, translation and scan rights.
+Publication review covers the specific edition, translation, images and scan.
 
 The user's private pack is a transformation of existing user-provided material, returned to the user for research. It conveys no new right to publish. It is excluded from Git and the public build. Original source records and credits remain intact.
 
-## Before publishing any held material
+## Public download records
 
-Add a source-specific permission or licence record, including exact material, rightsholder/licensor, licence URL or permission evidence, attribution and any restrictions. Verify the permitted scope before changing `publication` from `metadata-only`. Do not assign the software's MIT licence to source texts.
+Record the licence or permission and source credit for the exact file in the download manifest. The build validates the size and checksum and serves the PDF from the Atlas. The software licence covers application code.
 
-Existing Drive sharing settings and source permissions were not changed. No permission request was sent to a third party.
-
-## Nanzhao study integration, 28 October 2026
-
-The completed 32-page research dossier is represented by bibliographical metadata, original summary text attributed to the report, and its existing Drive link. The report itself, source plates, manuscript scans, companion materials and third-party publications are not added to the public repository or build. Their reproduction permissions have not been established by this integration. Drive access settings are preserved. The software licence does not extend to the linked report or its sources.
-
-## Coin-study integration, 1 November 2026
-
-Both existing reports were read through their verified Drive URLs and linked with distinct bibliographical records and original, attributed summaries. Owner-only permission metadata was reported for each file; sharing settings were not changed. The nine-page report and 15-page supplement remain separate and unchanged. No PDFs, coin photographs, source-pack issues, restricted Rhodes scan or unavailable Chowdhuri–Ray article are copied to the public repository. Existing Allan and Deyell records are reused. Direct access in the supplement describes its evidence review, not a public redistribution licence or an independent Atlas authentication.
+The public Nanzhao study uses plates from the 1930 *Ahom-Buranji* and the 1900 *Gazetteer of Upper Burma and the Shan States*, along with project maps based on Natural Earth. The public coin report omits the third-party cover photograph. The coin supplement and the Nanzhao PDF use public catalogue references where the research copies referred to the working collection.

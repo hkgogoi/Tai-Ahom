@@ -5,6 +5,7 @@ import json
 import re
 from html.parser import HTMLParser
 from pathlib import Path
+from build import verify_document
 ROOT=Path(__file__).resolve().parents[1]
 def read(name): return json.loads((ROOT/'data'/name).read_text())
 works=read('works.json')
@@ -30,10 +31,32 @@ assert sum('unresolved-glyph' in r['flags'] for r in records if r['work']=='ma-l
 catalogue=read('catalogue.json')
 assert len(catalogue)==126
 assert len({s['id'] for s in catalogue})==126
-assert all(s['url'].startswith('https://drive.google.com/') for s in catalogue)
 additions=read('catalogue-additions.json')
 assert catalogue[121:]==additions and len(additions)==5
 sources={s['id']:s for s in catalogue}
+documents=read('public-documents.json')
+dist=ROOT/'dist'
+assert documents and documents.keys() <= sources.keys()
+assert len({d['filename'] for d in documents.values()})==len(documents)
+expected_documents=set()
+for source_id, document in documents.items():
+    assert sources[source_id]['format']=='application/pdf'
+    assert re.fullmatch(r'[a-z0-9-]+\.pdf',document['filename'])
+    assert document['rights'] and document['credit']
+    assert all(url.startswith('https://') and 'drive.google.com' not in url for url in document.get('origins', []))
+    path=dist/'documents'/document['filename']
+    verify_document(path, document)
+    expected_documents.add(path)
+public_data=(dist/'catalogue-data.js').read_text(encoding='utf-8')
+public_catalogue=json.loads(public_data.removeprefix('window.ARCHIVE = ').removesuffix(';\n'))['catalogue']
+assert len(public_catalogue)==len(catalogue)
+assert {source['id']:source['download']['href'] for source in public_catalogue if 'download' in source}=={
+    source_id:'documents/'+document['filename'] for source_id,document in documents.items()
+}
+assert all('url' not in source for source in public_catalogue)
+for work in works:
+    assert work['edition_id'] in sources
+    assert work.get('source_url') or work['source_id'] in sources
 for source in catalogue:
     related=source.get('related_source_ids',[])
     assert len(related)==len(set(related)) and source['id'] not in related
@@ -42,14 +65,13 @@ studies=read('research.json')['studies']
 assert len({s['id'] for s in studies})==len(studies)
 for study in studies:
     source=sources[study['source_id']]
-    assert source['research_id']==study['id'] and source['publication']=='link-only'
+    assert source['research_id']==study['id'] and source['id'] in documents
     assert source['bibliography'] and source['description'] and source['subjects']
     assert {c['category'] for c in study['claims']}=={'observation','hypothesis'}
 nanzhao=next(s for s in studies if s['id']=='tai-ahom-nanzhao')
 source=sources[nanzhao['source_id']]
 assert source['id']=='1_FhHnRLXQVE4gyfxnVRxzDeVyU0t1Z_W'
 assert source['date']=='2026-10-28' and source['pages']==32
-assert source['url']=='https://drive.google.com/file/d/1_FhHnRLXQVE4gyfxnVRxzDeVyU0t1Z_W/view'
 assert {c['label'] for c in nanzhao['claims']}=={'Documented regional evidence','Plausible historical connections','Unverified genealogy'}
 for sid,pages,research_id in [
     ('1U4IjtMHnzWU6TEysVibvMow2yO_6ibz6',9,'ahom-chinese-coin-report'),
@@ -57,8 +79,7 @@ for sid,pages,research_id in [
 ]:
     source=sources[sid]
     assert source['date']=='2026-10-29' and source['pages']==pages
-    assert source['catalogued_on']=='2026-11-01' and source['publication']=='link-only'
-    assert source['url']==f'https://drive.google.com/file/d/{sid}/view'
+    assert source['catalogued_on']=='2026-11-01'
     assert source['research_id']==research_id
     assert {'1rtU1igWWyxK_bFQ-2_ZVlAv3JGr3tdpc','1sf8-bRc5whuxgWyMCJ_oXqSgD7-PbLtx'}<=set(source['related_source_ids'])
 assert 'PRIVATE_READING_PACK =' not in (ROOT/'dist/reading-data.js').read_text()
@@ -72,7 +93,10 @@ class Assets(HTMLParser):
             assert (ROOT/'dist'/url.split('?')[0]).is_file(),url
 Assets().feed((ROOT/'dist/index.html').read_text())
 for file in (ROOT/'dist').rglob('*'):
-    assert file.suffix.lower() not in {'.pdf','.epub','.webp','.jpg','.jpeg'},f'Unexpected published source image: {file}'
+    if file.suffix.lower() in {'.pdf','.epub','.webp','.jpg','.jpeg','.zip'}:
+        assert file in expected_documents,f'Unlisted public document or image: {file}'
     if file.is_file() and file.suffix in {'.js','.html','.css'}:
-        assert 'se=2026-' not in file.read_text(),f'Unexpected temporary download credential: {file}'
-print('PASS: 4,637 unique locators; 126 links; research references, coverage, confidence and public-content boundary.')
+        page=file.read_text(encoding='utf-8').lower()
+        assert not re.search(r'https?://(?:drive|docs)\.google\.com/',page),f'Unexpected Drive link: {file}'
+        assert 'se=2026-' not in page,f'Unexpected temporary download credential: {file}'
+print(f'PASS: 4,637 locators; 126 catalogue records; {len(documents)} verified public downloads; coverage and research preserved.')

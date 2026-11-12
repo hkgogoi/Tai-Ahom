@@ -1,18 +1,14 @@
 # Tai-Ahom Research Atlas
 
-A mobile-friendly research archive for the Tai-Ahom manuscript collection. Release **0.2.2**, 1 November 2026.
+A mobile-friendly research archive for the Tai-Ahom manuscript collection. Release **0.2.3**, 12 November 2026.
 
-The repository preserves source identifiers, bibliographical references, coverage and uncertainty. It indexes **4,637 records** across seven working collections and links **126 source files**. Original manuscripts and existing Drive files are preserved.
+The Atlas indexes **4,637 records** across seven working collections and retains **126 catalogue entries**. [Documents and sources](https://hkgogoi.github.io/Tai-Ahom/#sources?available=1) lists the public PDFs with direct downloads and provenance. Entries awaiting publication clearance remain searchable.
 
 ## Public archive and private readings
 
-**The public repository contains metadata, not the complete third-party transcriptions or scans.** The optional private reading pack contains the genuine Unicode readings and corresponding English from the user's existing collection. Load it in **Load readings**; it is searched on the device, without an upload. The private offline edition already includes it.
+Public downloads include the 1930 *Ahom-Buranji*, historical articles, licensed scholarship and project research. The optional private reading pack contains inherited Unicode readings and corresponding English. Load it in **Load readings** to search on your device. The private offline edition already includes it.
 
-The collection's 14 October catalogue lists 118 PDFs and three other files. Later additions are two links to the 19 October Bar Amra revision and the 32-page [Tai-Ahom and Nanzhao research study](https://drive.google.com/file/d/1_FhHnRLXQVE4gyfxnVRxzDeVyU0t1Z_W/view), completed 28 October. These are dated inventory figures, not a claim that every linked file is publicly accessible.
-
-Search Sources for **Nanzhao**, migration or historical geography. The catalogue includes the report's full title, date, bibliographical description and subjects. Research presents an attributed summary distinguishing documented regional contact and continuity, plausible transmission mechanisms and unverified dynastic descent. The PDF and its source plates remain linked in Drive; no redistribution permission is inferred.
-
-The two completed Chinese-character Ahom coin studies (29 October 2026) are separate searchable records: the nine-page illustrated report and the 15-page source-critical supplement. Search Sources for **Chinese coin**, **Pratapa**, **Jayadhvaja**, **Tibet**, **Yunnan** or **2026-10-29**. Research attributes the competing royal and trade interpretations, distinguishes directly read scholarship from indirect accounts, and links the existing Allan and Deyell references without duplication. Their PDFs retain existing Drive permissions; the originals and restricted source scans are not republished.
+Research includes the Nanzhao study and both Chinese-character coin studies, with separate catalogue entries and PDF downloads. The public copy of the illustrated coin report omits the cover photograph. See [reproduction review](docs/RIGHTS.md) for publication evidence.
 
 | Collection | Numbered records | Source revision |
 |---|---:|---|
@@ -40,7 +36,7 @@ Kham Kau Phi Dam is an oral ritual text, not a manuscript. Lakni is a partial ma
 
 ## Run locally
 
-Python 3.10+ and Node 18+ are sufficient. No dependencies need to be installed.
+The build uses Python 3.10+, Node 18+ and curl for public archive PDFs.
 
 ```sh
 python3 scripts/build.py
@@ -55,20 +51,20 @@ Open `http://localhost:8080`. The generated `dist/index.html` also supports ordi
 
 Repository: <https://github.com/hkgogoi/Tai-Ahom>.
 
-The workflow `.github/workflows/pages.yml` builds and validates metadata, runs search/import tests, then deploys `dist`. In repository **Settings → Pages**, the source must be **GitHub Actions**. Use the URL from a successful deployment; a committed workflow alone is not evidence that the site is live.
+The workflow `.github/workflows/pages.yml` builds and validates the catalogue and public PDFs, runs the search and import tests, then deploys `dist`. Public archive copies listed with download origins in `data/public-documents.json` are verified by SHA-256 and served from the Atlas with the other PDFs. In repository **Settings → Pages**, the source must be **GitHub Actions**. Use the URL from a successful deployment; a committed workflow alone is not evidence that the site is live.
 
 Keep the existing history. Do not force-push or delete the earlier `import/ahom-atlas` branch. It contains the prior 0.1.0 build; it was not merged because its scan derivatives and older samples need separate rights review.
 
 ## Reproduce the import
 
-Obtain these existing user-owned working packages from the linked Drive collection and name local copies as follows:
+Use the project’s existing research packages with these local filenames.
 
 | Local input | Existing source |
 |---|---|
-| `unicode.zip` | [Tai Ahom Unicode Working Package](https://drive.google.com/file/d/1fs_sNS6JYAbdd85D2PhCDVX6qhHql7gn/view) |
-| `ming.zip` | [Ming Mvng Lung Phai working package](https://drive.google.com/file/d/1ykAqODvRr4EqMUllfPdAdNz1F45foAH9/view) |
-| `baramra.zip` | [Bar Amra revision 2 working package](https://drive.google.com/file/d/1a2oU6jqAAHTRo2ti_vIdTNRGbuw_GvVa/view) |
-| `catalogue.json` | [Collection catalogue JSON](https://drive.google.com/file/d/1_OQpNpQbBkzD1erLFKSM0uCC8Qq5d5Nh/view) |
+| `unicode.zip` | Tai Ahom Unicode Working Package |
+| `ming.zip` | Ming Mvng Lung Phai working package |
+| `baramra.zip` | Bar Amra revision 2 working package |
+| `catalogue.json` | Collection catalogue JSON |
 
 The input files are not redistributed here. Their SHA-256 fingerprints are recorded in `data/source-fingerprints.json`.
 
@@ -82,11 +78,13 @@ The import script reads JSON members; it does not execute any supplied archive s
 
 ## Repository structure
 
-- `data/catalogue.json`: dated bibliography and links; `catalogue-additions.json` preserves post-inventory additions during re-import.
+- `data/catalogue.json`: dated bibliography; `catalogue-additions.json` preserves post-inventory additions during re-import.
 - `data/works.json`: collection IDs, source credits, scope and subject tags.
 - `data/index/*.json`: public record locators and review metadata, without inherited readings.
 - `data/bar-amra-coverage.json`: counts, folios and all 65 research targets.
 - `data/rights.json`: source-specific publication decisions and evidence.
+- `data/public-documents.json`: public download provenance, file size and SHA-256 for each edition.
+- `documents/`: source files for public downloads bundled with the repository.
 - `data/research.json`: the inherited historical dossier, explicitly labelled, plus separately attributed research-study summaries.
 - `dist/`: mobile interface, local importer and licensed font.
 - `scripts/`: deterministic build, import, preservation audit and tests.

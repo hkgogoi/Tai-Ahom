@@ -23,9 +23,6 @@ def dump(path, value):
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(value, ensure_ascii=False, separators=(',', ':')) + '\n', encoding='utf-8')
 
-def drive(file_id):
-    return f'https://drive.google.com/file/d/{file_id}/view'
-
 def private_use(text):
     return any(0xE000 <= ord(c) <= 0xF8FF or 0xF0000 <= ord(c) <= 0xFFFFD or 0x100000 <= ord(c) <= 0x10FFFD for c in text)
 
@@ -36,9 +33,12 @@ def main(inputs, private):
     bibliographical = []
     for row in catalogue:
         title = row['title'].rsplit('.', 1)[0].replace('_', ' ')
+        title = {
+            '1Of-HTvLzlgHWeu5WbiZxO_ysc1Ycgw41': 'Interpretation of the Ahom extract, published as Plate IV of the January number of the present volume (Jenkins 1837)',
+            '1x3rTiprI0aOLnnB22iRYwwiJ1fFDzxpZ': 'Ahom-Buranji with parallel English translation (Golap Chandra Barua, 1930)',
+        }.get(row['id'], title)
         bibliographical.append({'id': row['id'], 'title': title, 'filename': row['title'], 'format': row['mime_type'],
-            'category': row['category'], 'url': row['url'], 'catalogued_on': '2026-10-14',
-            'access': 'Existing Drive permissions apply', 'publication': 'link-only'})
+            'category': row['category'], 'catalogued_on': '2026-10-14'})
     # Keep later research additions when rebuilding the dated 121-item inventory.
     bibliographical.extend(json.loads((ROOT / 'data/catalogue-additions.json').read_text()))
     works, records, originals = [], [], {}
@@ -66,7 +66,7 @@ def main(inputs, private):
                 'identifier_type': 'Project identifier, not an archival shelfmark', 'kind': 'oral ritual' if key == 'kham_kau' else 'working edition',
                 'records': len(rows), 'subjects': subjects[key], 'source_date': '2026-10-14', 'credits': config['credits'],
                 'scope': config['scope'], 'notes': config.get('additional_notes', []), 'translation_basis': config['english_basis'],
-                'edition_url': edition['url'], 'source_url': source['url'], 'source_id': source['id'], 'publication': 'metadata-only',
+                'edition_id': edition['id'], 'source_id': source['id'], 'publication': 'metadata-only',
                 'folio_mapping': 'Not supplied at record level. Analytical-source page numbers are not manuscript folios.'})
             for row in rows:
                 ahom, english = row.get('ahom', ''), row.get('english', '')
@@ -95,7 +95,7 @@ def main(inputs, private):
         'credits': 'Inherited readings from the Ahom Dictionary Resource Project and manuscript-referenced SEAlang dictionary supplements; Zeenat Tabassum and Stephen Morey (2010) for two additions.',
         'scope': '1,236 recovered records aligned to 61 supplied images. Four whole folios remain untranscribed; 55 numbered IDs lack accepted readings. No complete entry has confidence A.',
         'notes': ['Tai-Ahom headwords and Assamese explanations written in Ahom script are separate language fields.', 'The four A-rated headwords do not certify their entire entries.', 'Image sequence is not a folio number. EAP373/26/2 canvas 3 matches 1r; canvas 21 matches 10r. No replacement for 26r/26v was established.'],
-        'translation_basis': 'Inherited English lexical glosses; unresolved senses remain unresolved.', 'edition_url': drive('16MoqMHeFUkVkadew5LQm473ZmGJsTUP0'),
+        'translation_basis': 'Inherited English lexical glosses; unresolved senses remain unresolved.', 'edition_id': '16MoqMHeFUkVkadew5LQm473ZmGJsTUP0',
         'source_url': 'http://sealang.net/archives/ahom/jp.htm', 'source_id': 'bar-amra-source', 'publication': 'metadata-only', 'folio_mapping': 'Explicit folio, image and facsimile-page mappings preserved from the revised source register.'})
     for row in rows:
         flags = []
